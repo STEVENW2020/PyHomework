@@ -59,10 +59,10 @@ with open(output_file, "w") as file:
     
     file.write('Results\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
-    file.write(f'Total Votes: {total_votes}\n')
+    file.write(f'Total Votes: {total_votes:,}\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
     for x in range(len(candidatelist)):
-        file.write(f'{candidatelist[x]} : {pct[x]}% ({candidate_vote_count[x]})\n')
+        file.write(f'{candidatelist[x]} : {pct[x]}% ({candidate_vote_count[x]:,})\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
     file.write(f'Winner: {election_winner}\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
