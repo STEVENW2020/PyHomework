@@ -41,29 +41,29 @@ election_winner = candidatelist[max_index]  # identifies the election winner as 
 
 
 #Prints to terminal
-print('======================================================')
-print('|                  Election Results                  |')
-print('======================================================')
+
+print('Results')
+print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 print(f'Total Votes: {total_votes}')
 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 for x in range(len(candidatelist)):                            # prints each candidate and statistics
     print(f'{candidatelist[x]} : {pct[x]}% ({candidate_vote_count[x]})')
 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-print(f'Election winner: {election_winner.upper()}')  #prints the winner in UPPERCASE
+print(f'Winner: {election_winner}')  #prints the winner 
 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 
 #output txt file
 output_file = os.path.join("pypoll_election_results.txt")  #confirmed syntax from https://stackoverflow.com/questions/6159900/correct-way-to-write-line-to-file
 with open(output_file, "w") as file:
-    file.write('======================================================\n')
-    file.write('|                  Election Results                  |\n')
-    file.write('======================================================\n')
+    
+    file.write('Results\n')
+    file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
     file.write(f'Total Votes: {total_votes}\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
     for x in range(len(candidatelist)):
         file.write(f'{candidatelist[x]} : {pct[x]}% ({candidate_vote_count[x]})\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
-    file.write(f'Election winner: {election_winner.upper()}\n')
+    file.write(f'Winner: {election_winner}\n')
     file.write('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n')
-    file.write("---END OF REPORT---")
+    
